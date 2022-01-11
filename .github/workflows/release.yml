@@ -16,18 +16,6 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
 
-      - name: Setup Maven settings.xml
-        uses: s4u/maven-settings-action@v2.4.1
-        with:
-          override: true
-          servers: '[{"id": "ossrh", "username": "${{ secrets.SONATYPE_USERNAME }}", "password": "${{ secrets.SONATYPE_PASSWORD }}"}]'
-          properties: '[{"gpg.executable": "gpg"}, {"gpg.passphrase": "${{ secrets.GPG_PASSWORD }}"}]'
-
-      - name: Setup gpg keyring
-        env:
-          GPG_FILE: ${{ secrets.GPG_FILE }}
-        run: mkdir ~/.gnupg && echo "$GPG_FILE" | base64 -d > ~/.gnupg/secring.gpg
-
       - name: Set the current release version
         id: release_version
         run: echo ::set-output name=release_version::${GITHUB_REF:11}
