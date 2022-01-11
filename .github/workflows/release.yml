@@ -15,6 +15,7 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
+          server-id: 'github'
 
       - name: Set the current release version
         id: release_version
@@ -41,15 +42,19 @@ jobs:
 
       - name: Prepare release
         run: mvn --batch-mode release:prepare -DreleaseVersion=${{ steps.release_version.outputs.release_version }} -Dtag=v${{ steps.release_version.outputs.release_version }} -DdevelopmentVersion=${{ steps.next_version.outputs.next_version }} -Pgithub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Perform release
-        env:
-          GPG_PASSWORD: ${{ secrets.GPG_PASSWORD }}
         run: mvn --batch-mode release:perform -Pgithub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish package
         if: success()
         run: mvn --batch-mode deploy -Pgithub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Close release
         if: success()
@@ -61,3 +66,5 @@ jobs:
       - name: Rollback release
         if: failure()
         run: mvn release:rollback -Pgithub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
