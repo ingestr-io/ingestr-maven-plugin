@@ -67,6 +67,15 @@
                     <url>https://maven.pkg.github.com/Ingestr-io/ingestr-maven-plugin</url>
                 </repository>
             </distributionManagement>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-site-plugin</artifactId>
+                        <version>3.7.1</version>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
     </profiles>
 

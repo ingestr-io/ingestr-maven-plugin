@@ -52,12 +52,12 @@ jobs:
           echo ::set-output name=next_version::${NV}-SNAPSHOT
 
       - name: Prepare release
-        run: mvn --batch-mode release:prepare -DreleaseVersion=${{ steps.release_version.outputs.release_version }} -Dtag=v${{ steps.release_version.outputs.release_version }} -DdevelopmentVersion=${{ steps.next_version.outputs.next_version }}
+        run: mvn --batch-mode release:prepare -DreleaseVersion=${{ steps.release_version.outputs.release_version }} -Dtag=v${{ steps.release_version.outputs.release_version }} -DdevelopmentVersion=${{ steps.next_version.outputs.next_version }} -Pgithub
 
       - name: Perform release
         env:
           GPG_PASSWORD: ${{ secrets.GPG_PASSWORD }}
-        run: mvn --batch-mode release:perform
+        run: mvn --batch-mode release:perform -Pgithub
 
       - name: Publish package
         if: success()
@@ -74,4 +74,4 @@ jobs:
 
       - name: Rollback release
         if: failure()
-        run: mvn release:rollback
+        run: mvn release:rollback -Pgithub

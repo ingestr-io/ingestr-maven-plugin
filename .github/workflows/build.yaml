@@ -23,7 +23,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Build with Maven
-        run: mvn --batch-mode --update-snapshots verify
+        run: mvn --batch-mode --update-snapshots verify -Pgithub
 
       - name: Determine current version
         id: release_version
@@ -31,4 +31,4 @@ jobs:
 
       - name: Generate site
         if: success() && github.event_name == 'push'
-        run: mvn site:site
+        run: mvn site:site -Pgithub
