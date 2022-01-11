@@ -27,7 +27,7 @@
     <scm>
         <url>https://github.com/ingestr-io/ingestr-maven-plugin</url>
         <connection>scm:git:git@github.com:ingestr-io/ingestr-maven-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com:ingestr-io/ingestr-maven-plugin.git</developerConnection>
+        <developerConnection>scm:git:https://github.com/ingestr-io/ingestr-maven-plugin.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
@@ -98,7 +98,7 @@
                 <repository>
                     <id>github</id>
                     <name>GitHub Packages</name>
-                    <url>https://maven.pkg.github.com/Ingestr-io/ingestr-maven-plugin</url>
+                    <url>https://maven.pkg.github.com/ingestr-io/ingestr-maven-plugin</url>
                 </repository>
             </distributionManagement>
             <build>
