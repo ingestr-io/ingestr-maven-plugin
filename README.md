@@ -1,4 +1,4 @@
-# Micronaut Maven Plugin
+# Ingestr Maven Plugin
 
 This is the Maven plugin to help build, run and deploy Ingestr Loaders built using the Ingestr framework.
 
