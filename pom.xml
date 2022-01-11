@@ -9,6 +9,9 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>ingestr-maven-plugin</name>
 
+    <properties>
+        <project.scm.id>github</project.scm.id>
+    </properties>
 
     <issueManagement>
         <system>GitHub</system>
