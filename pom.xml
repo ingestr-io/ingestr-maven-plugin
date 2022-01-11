@@ -9,6 +9,37 @@
     <version>1.0.0</version>
     <name>ingestr-maven-plugin</name>
 
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/ingestr-io/ingestr-maven-plugin/issues</url>
+    </issueManagement>
+
+    <ciManagement>
+        <system>GitHub Actions</system>
+        <url>https://github.com/ingestr-io/ingestr-maven-plugin/actions</url>
+    </ciManagement>
+
+
+    <scm>
+        <url>https://github.com/ingestr-io/ingestr-maven-plugin</url>
+        <connection>scm:git:git@github.com:ingestr-io/ingestr-maven-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:ingestr-io/ingestr-maven-plugin.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+
+    <organization>
+        <name>Ingestr</name>
+        <url>https://ingestr.io/</url>
+    </organization>
+    <developers>
+        <developer>
+            <name>Victor Cetinic</name>
+            <url>https://github.com/vcetinick</url>
+        </developer>
+    </developers>
+
     <dependencies>
         <dependency>
             <groupId>org.twdata.maven</groupId>
