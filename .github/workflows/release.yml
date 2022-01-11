@@ -50,8 +50,6 @@ jobs:
       - name: Publish package
         if: success()
         run: mvn --batch-mode deploy -Pgithub
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Close release
         if: success()
