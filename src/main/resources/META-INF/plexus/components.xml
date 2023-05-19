@@ -18,7 +18,7 @@
                                 org.apache.maven.plugins:maven-resources-plugin:resources
                             </process-resources>
                             <compile>
-                                io.ingestr:ingestr-maven-plugin:compile
+                                io.extractor:extractor-maven-plugin:compile
                             </compile>
                             <process-test-resources>
                                 org.apache.maven.plugins:maven-resources-plugin:testResources
@@ -33,7 +33,7 @@
                                 io.micronaut.build:micronaut-maven-plugin:graalvm-resources
                             </prepare-package>
                             <package>
-                                io.ingestr:ingestr-maven-plugin:jar,
+                                io.extractor:extractor-maven-plugin:jar,
                                 org.apache.maven.plugins:maven-shade-plugin:shade
                             </package>
                             <install>

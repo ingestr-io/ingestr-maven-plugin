@@ -4,7 +4,7 @@ This is the Maven plugin to help build, run and deploy Ingestr Loaders built usi
 
 ## Documentation
 
-To read the full documentation about the Ingestr framework go to the [Documentation](https://ingestr.io/docs/latest) on
+To read the full documentation about the Ingestr framework go to the [Documentation](https://extractor.io/docs/latest) on
 the Ingestr.io website.
 
 ### Running integration tests
